@@ -9,11 +9,15 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"contentlayer": "^0.3.4",
 		"next": "13.4.13",
 		"next-auth": "^4.23.0",
+		"next-contentlayer": "^0.3.4",
+		"next-mdx-remote": "^4.4.1",
 		"next-themes": "npm:@wits/next-themes@^0.2.16",
 		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"react-dom": "18.2.0",
+		"sharp": "^0.32.4"
 	},
 	"devDependencies": {
 		"@types/node": "20.4.10",
@@ -26,11 +30,17 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-tailwindcss": "^3.13.0",
 		"postcss": "8.4.27",
-		"prettier": "^2.8.8",
+		"prettier": "^3.0.1",
 		"prettier-plugin-imports": "^4.2.5",
-		"prettier-plugin-package": "^1.3.1",
+		"prettier-plugin-tailwindcss": "^0.5.2",
 		"sass": "^1.65.1",
 		"tailwindcss": "3.3.3",
 		"typescript": "5.1.6"
+	},
+	"postcss": {
+		"plugins": {
+			"tailwindcss": "./styles/tailwind.config.ts",
+			"autoprefixer": {}
+		}
 	}
 }

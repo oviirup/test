@@ -6,13 +6,11 @@
 		"<THIRD_PARTY_MODULES>",
 		"^@/(.*)$",
 		"^[./]",
+		"<TYPES>",
 		"^[./](.*).(css|sass|sass)$"
 	],
 	"jsxSingleQuote": true,
-	"plugins": [
-		"prettier-plugin-package",
-		"prettier-plugin-imports"
-	],
+	"plugins": ["prettier-plugin-imports"],
 	"quoteProps": "consistent",
 	"semi": false,
 	"singleQuote": true,

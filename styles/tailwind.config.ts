@@ -1,20 +1,34 @@
+import colors from 'tailwindcss/colors'
+import customPlugin from './tailwind.plugin'
 import type { Config } from 'tailwindcss'
 
-const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  plugins: [],
+/** Main tailwind config */
+const tailwindConfig: Config = {
+	darkMode: ['class', '[data-theme=dark]'],
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+	],
+	theme: {
+		container: {
+			padding: 'clamp(1.5rem,4vw,3rem)',
+			center: true,
+		},
+		extend: {
+			colors: {
+				// assign neutral color to gray
+				gray: colors.neutral,
+				//@ts-ignore removes neutral colors
+				neutral: null,
+			},
+			fontFamily: {
+				inter: 'var(--font-inter)',
+				raleway: 'var(--font-raleway)',
+			},
+		},
+	},
+	plugins: [customPlugin],
 }
-export default config
+
+export default tailwindConfig

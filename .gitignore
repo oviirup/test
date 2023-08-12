@@ -22,3 +22,7 @@ yarn.lock
 # local env files
 .env*
 !.env.example
+
+
+# Contentlayer
+.contentlayer
