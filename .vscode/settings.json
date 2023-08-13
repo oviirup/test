@@ -5,6 +5,5 @@
 	"explorer.fileNesting.patterns": {
 		"*.ts": "$(capture).js, $(capture).mjs, $(capture).*.ts",
 		"readme*": "changelog*, code_of_conduct*, license*, readme*, security.md"
-	},
-	"explorer.excludeGitIgnore": true
+	}
 }
