@@ -1,12 +1,9 @@
 node_modules
-coverage
 dist
-build
-.vercel
+client
 .turbo
-.next
-.swc
+*.d.ts
 
 package-lock.json
-pnpm-lock.yaml
+pnpm-*.yaml
 yarn.lock

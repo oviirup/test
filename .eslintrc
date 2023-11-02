@@ -1,7 +1,0 @@
-{
-	"extends": ["react-hooks", "next", "prettier"],
-	"rules": {
-		"no-console": 1,
-		"eqeqeq": 1
-	}
-}

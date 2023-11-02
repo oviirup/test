@@ -1,0 +1,24 @@
+name: Publish Plugin
+
+on:
+  push:
+    paths:
+      - 'packages/vite-plugin-webext/**'
+      - 'packages/create-vite-webext /**'
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+      issue: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: { node-version: 20 }
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with: { version: 8 }
+      - run: pnpm i
+      - run: pnpm run build

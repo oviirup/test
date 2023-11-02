@@ -1,0 +1,36 @@
+{
+	"name": "create-vite-webext-test",
+	"version": "1.0.0",
+	"private": false,
+	"description": "A vite plugin for generating cross browser platform, ES module based web extensions",
+	"repository": "github:graygalaxy/vite-webext",
+	"license": "MIT",
+	"author": "Avirup Ghosh (https://github.com/graygalaxy)",
+	"type": "module",
+	"bin": {
+		"create-vite-webext": "dist/index.js"
+	},
+	"files": [
+		"dist/*"
+	],
+	"scripts": {
+		"build": "tsup index.ts --format esm --clean",
+		"clean": "rimraf -g dist",
+		"start": "tsx index.ts"
+	},
+	"devDependencies": {
+		"@types/chrome": "latest",
+		"@types/node": "20",
+		"@types/prompts": "2.4",
+		"@types/validate-npm-package-name": "^4.0.1",
+		"command-exists": "1.2",
+		"commander": "11.1",
+		"picocolors": "^1.0.0",
+		"prompts": "2.4",
+		"rimraf": "5",
+		"tsup": "7",
+		"tsx": "3",
+		"typescript": "latest",
+		"validate-npm-package-name": "^5.0.0"
+	}
+}

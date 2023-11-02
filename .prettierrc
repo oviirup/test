@@ -1,20 +1,13 @@
 {
-	"arrowParens": "always",
-	"importOrder": [
-		"^(react/(.*)$)|^(react$)",
-		"^(next/(.*)$)|^(next$)",
-		"<THIRD_PARTY_MODULES>",
-		"^@/(.*)$",
-		"^[./]",
-		"<TYPES>",
-		"^[./](.*).(css|sass|sass)$"
-	],
-	"jsxSingleQuote": true,
-	"plugins": ["prettier-plugin-imports"],
-	"quoteProps": "consistent",
-	"semi": false,
+	"printWidth": 80,
 	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"quoteProps": "consistent",
+	"arrowParens": "always",
+	"plugins": ["prettier-plugin-imports"],
+	"importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "<TYPES>"],
+	"useTabs": true,
 	"tabWidth": 2,
 	"trailingComma": "all",
-	"useTabs": true
+	"semi": true
 }
