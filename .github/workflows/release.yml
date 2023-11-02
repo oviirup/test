@@ -19,3 +19,5 @@ jobs:
         with: { version: 8 }
       - run: pnpm i
       - run: pnpm run build
+      - run: pnpx semantic-release
+        working-directory: ./packages/vite-plugin-webext
