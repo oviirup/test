@@ -49,7 +49,7 @@ jobs:
       - name: 🧩 Install and Build
         run: pnpm install ; pnpm build
 
-      - uses: montyf/package-json-updated-action
+      - uses: montyd/package-json-updated-action
         id: version-updated
         with:
           path: packages/vite-plugin-webextpackage.json
