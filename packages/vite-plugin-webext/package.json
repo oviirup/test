@@ -5,7 +5,7 @@
   "description": "A vite plugin for generating cross browser platform, ES module based web extensions",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oviirup/vite-webext",
+    "url": "https://github.com/oviirup/test",
     "directory": "packages/vite-plugin-webext"
   },
   "license": "MIT",

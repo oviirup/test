@@ -5,7 +5,7 @@
   "description": "Simple way to bootstrap your web-extension project with vite",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oviirup/vite-webext",
+    "url": "https://github.com/oviirup/test",
     "directory": "packages/create-vite-webext"
   },
   "license": "MIT",
