@@ -1,11 +1,10 @@
-name: Publish Plugin
+name: 🚀 First Release
 
 on:
   workflow_dispatch:
 
 jobs:
   publish:
-    name: 🚀 First Release
     strategy:
       matrix:
         os: [ubuntu-latest]
