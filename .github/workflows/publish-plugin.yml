@@ -36,13 +36,13 @@ jobs:
       - name: 🧭 Get pnpm store directory
         id: pnpm-cache
         run: |
-          echo "::set-output name=path::$(npm config get cache)"
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - name: 💾 Cache pnpm modules
         uses: actions/cache@v3
         with:
-          path: ${{ steps.pnpm-cache.outputs.path }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
