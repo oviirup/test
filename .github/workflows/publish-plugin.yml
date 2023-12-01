@@ -29,8 +29,9 @@ jobs:
       - name: 🟡 Setup pnpm
         id: setup-pnpm
         uses: pnpm/action-setup@v2.1.0
-
-      - run: pnpm -v
+        with:
+          version: latest
+          run_install: false
 
       - name: 🧭 Get pnpm store directory
         id: pnpm-cache
@@ -45,11 +46,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: 🧩 Install dependencies
-        run: pnpm install
-
-      - name: 📦 Build package
-        run: npm run build
+      - name: 🧩 Install and Build
+        run: pnpm install ; pnpm build
 
       - name: 🚀 Publish  vite-plugin-webext
         working-directory: ./packages/vite-plugin-webext
