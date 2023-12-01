@@ -24,12 +24,6 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v3
 
-      - name: 🟢 Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-          registry-url: https://registry.npmjs.org/
-
       - name: 🟡 Setup pnpm
         id: setup-pnpm
         uses: pnpm/action-setup@v2.1.0
@@ -37,19 +31,12 @@ jobs:
           version: ${{ matrix.pnpm }}
           run_install: false
 
-      - name: 🧭 Get pnpm store directory
-        id: pnpm-config
-        run: |
-          echo "store_path=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: 💾 Cache pnpm modules
-        uses: actions/cache@v3
-        id: pnpm-cache
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v3
         with:
-          path: ${{ steps.pnpm-config.outputs.store_path }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version: ${{ matrix.node }}
+          registry-url: https://registry.npmjs.org/
+          cache: pnpm
 
       - name: 🧩 Install dependencies
         run: pnpm install
@@ -59,7 +46,6 @@ jobs:
 
       - name: 🚀 Publish  create-vite-webext
         working-directory: ./packages/create-vite-webext
-        run: |
-          npm publish --access public --no-git-checks
+        run: npm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
