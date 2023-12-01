@@ -3,11 +3,9 @@ name: 🚀 Publish Plugin
 on:
   push:
     branches: next
-    paths: packages/vite-plugin-webext/**
   pull_request_target:
     branches: master
     types: closed
-    paths: packages/vite-plugin-webext/**
 
 jobs:
   publish:
