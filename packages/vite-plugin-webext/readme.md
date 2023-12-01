@@ -76,4 +76,4 @@ This includes:
 
 [npm_url]: https://www.npmjs.com/package/vite-plugin-webext
 [sh_npm_version]: https://img.shields.io/npm/v/vite-plugin-webext
-[sh_npm_status]: https://img.shields.io/github/actions/workflow/status/graygalaxy/vite-plugin-webext/publish-plugin.yml
+[sh_npm_status]: https://img.shields.io/github/actions/workflow/status/oviirup/vite-plugin-webext/publish-plugin.yml

@@ -8,18 +8,11 @@
   "scripts": {
     "build": "turbo run build",
     "format": "prettier --write .",
-    "watch": "turbo run watch",
-    "changeset": "changeset",
-    "publish:packages": "changeset publish",
-    "version:packages": "changeset version"
+    "watch": "turbo run watch"
   },
   "devDependencies": {
     "prettier": "latest",
     "prettier-plugin-imports": "latest",
     "turbo": "latest"
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.27.1"
-  },
-  "packageManager": "pnpm@8.10.5"
+  }
 }

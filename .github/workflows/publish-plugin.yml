@@ -1,0 +1,64 @@
+name: 🚀 Publish Plugin
+
+on:
+  push:
+    branches: next
+    paths: packages/vite-plugin-webext/**
+  pull_request_target:
+    branches: master
+    types: closed
+    paths: packages/vite-plugin-webext/**
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [20.x]
+        pnpm: [latest]
+    runs-on: ${{ matrix.os }}
+    permissions:
+      id-token: write
+
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 🟡 Setup pnpm
+        id: setup-pnpm
+        uses: pnpm/action-setup@v2.1.0
+        with:
+          version: ${{ matrix.pnpm }}
+          run_install: false
+
+      - name: 🧭 Get pnpm store directory
+        id: pnpm-config
+        run: |
+          echo "store_path=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: 💾 Cache pnpm modules
+        uses: actions/cache@v3
+        id: pnpm-cache
+        with:
+          path: ${{ steps.pnpm-config.outputs.store_path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 🧩 Install dependencies
+        run: pnpm install
+
+      - name: 📦 Build package
+        run: npm run build
+
+      - name: 🚀 Publish  vite-plugin-webext
+        working-directory: ./packages/vite-plugin-webext
+        run: |
+          npm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
