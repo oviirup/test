@@ -9,6 +9,8 @@ import { renderTemplate } from '@/template/render-template';
 import { Command } from 'commander';
 import { cyan, red } from 'picocolors';
 
+console.log('dev version');
+
 // exit process on termination
 ['SIGINT', 'SIGTERM', 'SIGQUIT', 'SIGKILL'].forEach((signal) =>
   process.on(signal, () => process.exit()),

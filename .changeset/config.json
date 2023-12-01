@@ -5,6 +5,7 @@
   "fixed": [],
   "linked": [],
   "baseBranch": "next",
+  "access": "public",
   "updateInternalDependencies": "patch",
   "ignore": [],
   "privatePackages": {
