@@ -3,11 +3,9 @@ name: 🚀 Publish Plugin
 on:
   push:
     branches: next
-    paths: packages/vite-plugin-webext/**
   pull_request_target:
     branches: master
     types: closed
-    paths: packages/vite-plugin-webext/**
 
 jobs:
   publish:
@@ -29,7 +27,6 @@ jobs:
         uses: pnpm/action-setup@v2.1.0
         with:
           version: ${{ matrix.pnpm }}
-          run_install: false
 
       - name: 🟢 Setup node
         uses: actions/setup-node@v3
