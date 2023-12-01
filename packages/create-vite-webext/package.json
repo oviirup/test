@@ -1,5 +1,5 @@
 {
-  "name": "create-vite-webext-test",
+  "name": "create-vite-webext-dev",
   "version": "0.0.2",
   "private": false,
   "description": "Simple way to bootstrap your web-extension project with vite",
