@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-webext-test",
-  "version": "1.2.20",
+  "version": "0.0.2",
   "private": false,
   "description": "A vite plugin for generating cross browser platform, ES module based web extensions",
   "repository": {
