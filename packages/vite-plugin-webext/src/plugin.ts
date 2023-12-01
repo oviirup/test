@@ -8,6 +8,8 @@ import type { BuildMode, WebExtensionOptions } from '@/plugin.d';
 import type * as Rollup from 'rollup';
 import type * as Vite from 'vite';
 
+console.log('dev version');
+
 export default function webExtension(
   pluginOptions: WebExtensionOptions,
 ): Vite.PluginOption {
