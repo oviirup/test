@@ -1,9 +1,10 @@
-.turbo
 node_modules
-*-debug.log*
-*-error.log*
+dist
+client
+.turbo
+*.d.ts
 
-# package-lock
+
 package-lock.json
 pnpm-lock.yaml
 yarn.lock

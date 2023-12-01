@@ -1,0 +1,24 @@
+{
+  "name": "vite-webext",
+  "version": "1.2.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "format": "prettier --write .",
+    "watch": "turbo run watch",
+    "changeset": "changeset",
+    "publish:packages": "changeset publish",
+    "version:packages": "changeset version"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-imports": "latest",
+    "turbo": "latest"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
+}
