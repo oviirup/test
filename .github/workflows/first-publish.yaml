@@ -5,6 +5,7 @@ on:
 
 jobs:
   publish:
+    name: 🚀 First Release
     strategy:
       matrix:
         os: [ubuntu-latest]
