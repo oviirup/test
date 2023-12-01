@@ -49,8 +49,16 @@ jobs:
       - name: 🧩 Install and Build
         run: pnpm install ; pnpm build
 
+      - uses: montyf/package-json-updated-action
+        id: version-updated
+        with:
+          path: packages/vite-plugin-webextpackage.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: 🚀 Publish  vite-plugin-webext
-        working-directory: ./packages/vite-plugin-webext
+        working-directory: packages/vite-plugin-webext
+        if: steps.version-updated.outputs.has-updated
         run: |
           npm publish --access public --no-git-checks
         env:
